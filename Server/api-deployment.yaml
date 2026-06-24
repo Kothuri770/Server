@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: api
+        image: true-capture-api
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: batch-storage
+          mountPath: /app/storage/batches
+        - name: document-storage
+          mountPath: /app/storage/documents
+        - name: temp-storage
+          mountPath: /app/storage/temp
+        - name: samples-storage
+          mountPath: /app/storage/samples
+        - name: logs-storage
+          mountPath: /app/storage/logs
+        - name: templates-storage
+          mountPath: /app/storage/templates
+      volumes:
+      - name: batch-storage
+        hostPath:
+          path: /truecapture/ICBatches
+          type: DirectoryOrCreate
+      - name: document-storage
+        hostPath:
+          path: /truecapture/ICDocuments
+          type: DirectoryOrCreate
+      - name: temp-storage
+        hostPath:
+          path: /truecapture/ICTemp
+          type: DirectoryOrCreate
+      - name: samples-storage
+        hostPath:
+          path: /truecapture/ICSamples
+          type: DirectoryOrCreate
+      - name: logs-storage
+        hostPath:
+          path: /truecapture/ICLogs
+          type: DirectoryOrCreate
+      - name: templates-storage
+        hostPath:
+          path: /truecapture/ICTemplates
+          type: DirectoryOrCreate

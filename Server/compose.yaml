@@ -1,0 +1,36 @@
+# Comments are provided throughout this file to help you get started.
+# If you need more help, visit the Docker Compose reference guide at
+# https://docs.docker.com/go/compose-spec-reference/ 
+
+# Here the instructions define your application as a service called "server".
+# This service is built from the Dockerfile in the current directory.
+# You can add other services your application may depend on here, such as a
+# database or a cache. For examples, see the Awesome Compose repository:
+# https://github.com/docker/awesome-compose 
+services:
+  server:
+    build:
+      context: .
+      target: final
+    ports:
+      - 8081:8080
+    depends_on:
+      - truecapture-postgres
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=truecapture-postgres;Port=5433;Database=TrueCaptureDB;Username=postgres;Password=skts123
+
+  truecapture-postgres:
+    image: postgres:16
+    container_name: truecapture-postgres
+    restart: always
+    environment:
+      - POSTGRES_DB=TrueCaptureDB
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=skts123
+    ports:
+      - 5433:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

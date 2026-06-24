@@ -1,0 +1,4 @@
+[2026-06-03 10:10:43.282] GET_SCANNER_DEVICES | IN_PROGRESS | Retrieving available scanner devices | DETAILS: Task: GET_SCANNER_DEVICES, Description: Retrieving available scanner devices, UserId: admin
+[2026-06-03 10:17:06.906] GET_SCANNER_DEVICES | IN_PROGRESS | Retrieving available scanner devices | DETAILS: Task: GET_SCANNER_DEVICES, Description: Retrieving available scanner devices, UserId: admin
+[2026-06-08 12:01:15.161] GET_SCANNER_DEVICES | IN_PROGRESS | Retrieving available scanner devices | DETAILS: Task: GET_SCANNER_DEVICES, Description: Retrieving available scanner devices, UserId: admin
+[2026-06-23 13:50:51.759] GET_SCANNER_DEVICES | IN_PROGRESS | Retrieving available scanner devices | DETAILS: Task: GET_SCANNER_DEVICES, Description: Retrieving available scanner devices, UserId: admin

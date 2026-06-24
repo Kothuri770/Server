@@ -1,0 +1,20 @@
+Npgsql.PostgresException (0x80004005): 42601: syntax error at or near "$1"
+
+POSITION: 41
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at Server.Repositories.VerifyRepository.GetBatchVerificationContextAsync(Int32 batchId) in C:\Users\Praveen Gokanakonda\OneDrive - Smart Krow Technology Solutions Private Limited\IBM Datacap\TrueCapture\Code\Server\Server\Repositories\VerifyRepository.cs:line 1259
+  Exception data:
+    Severity: ERROR
+    SqlState: 42601
+    MessageText: syntax error at or near "$1"
+    Position: 41
+    File: scan.l
+    Line: 1248
+    Routine: scanner_yyerror

@@ -1,0 +1,19 @@
+Npgsql.PostgresException (0x80004005): 42P10: there is no unique or exclusion constraint matching the ON CONFLICT specification
+   at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteNonQuery(Boolean async, CancellationToken cancellationToken)
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
+   at Server.Repositories.VerifyRepository.SaveOcrResultsBulkInternalAsync(Int32 docId, List`1 fields, IDbConnection conn, IDbTransaction transaction) in C:\Users\Praveen Gokanakonda\OneDrive - Smart Krow Technology Solutions Private Limited\IBM Datacap\TrueCapture\Code\Server\Server\Repositories\VerifyRepository.cs:line 1397
+   at Server.Repositories.VerifyRepository.BulkSaveIndexDataAsync(BulkSaveIndexDto data) in C:\Users\Praveen Gokanakonda\OneDrive - Smart Krow Technology Solutions Private Limited\IBM Datacap\TrueCapture\Code\Server\Server\Repositories\VerifyRepository.cs:line 1345
+   at Server.Controllers.VerifyController.BulkSaveIndexData(BulkSaveIndexDto data) in C:\Users\Praveen Gokanakonda\OneDrive - Smart Krow Technology Solutions Private Limited\IBM Datacap\TrueCapture\Code\Server\Server\Controllers\VerifyController.cs:line 679
+  Exception data:
+    Severity: ERROR
+    SqlState: 42P10
+    MessageText: there is no unique or exclusion constraint matching the ON CONFLICT specification
+    File: plancat.c
+    Line: 945
+    Routine: infer_arbiter_indexes
